@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'mcr.microsoft.com/dotnet/core/samples:aspnetapp'
-      args '--rm -p 8000:80 --name aspnetcore_sample'
+      args '-p 8000:80 --name aspnetcore_sample'
     }
 
   }
