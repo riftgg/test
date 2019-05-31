@@ -1,8 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'bash'
       args 'echo "hello"'
+      image 'bash:latest'
     }
 
   }
