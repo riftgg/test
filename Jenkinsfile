@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('ls') {
       steps {
-        sh 'ls -lR'
+        sh 'dotnet test .'
       }
     }
   }
