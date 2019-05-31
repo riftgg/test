@@ -1,40 +1,14 @@
 pipeline {
   agent {
     docker {
-      image 'mcr.microsoft.com/dotnet/core/samples:aspnetapp'
-      args '-p 8000:80 --name aspnetcore_sample'
+      image 'microsoft/dotnet:1.1.2-sdk'
     }
 
   }
   stages {
-    stage('test 1') {
-      parallel {
-        stage('test 1') {
-          steps {
-            echo 'this is a test message'
-          }
-        }
-        stage('?') {
-          steps {
-            echo 'second pipeline branch'
-          }
-        }
-        stage('3rd') {
-          steps {
-            echo '3rd'
-          }
-        }
-        stage('dotnetapp') {
-          steps {
-            sh '''cd /app
-dotnet tests .'''
-          }
-        }
-      }
-    }
-    stage('join') {
+    stage('ls') {
       steps {
-        echo 'joining'
+        sh 'ls -lR'
       }
     }
   }
