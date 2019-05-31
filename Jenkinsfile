@@ -1,7 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'mcr.microsoft.com/dotnet/core/samples:dotnetapp'
+      image 'bash'
+      args 'echo "hello"'
     }
 
   }
