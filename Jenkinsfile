@@ -1,5 +1,11 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'microsoft/dotnet-samples:dotnetapp'
+      args 'Hello .NET Core from Docker'
+    }
+
+  }
   stages {
     stage('test 1') {
       parallel {
@@ -8,7 +14,7 @@ pipeline {
             echo 'this is a test message'
           }
         }
-        stage('') {
+        stage('?') {
           steps {
             echo 'second pipeline branch'
           }
