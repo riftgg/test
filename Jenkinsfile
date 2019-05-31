@@ -1,8 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'microsoft/dotnet-samples:dotnetapp'
-      args 'Hello .NET Core from Docker'
+    dockerfile {
+      filename 'Dockerfile'
     }
 
   }
