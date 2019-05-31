@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    dockerfile {
-      filename 'Dockerfile'
+    docker {
+      image 'mcr.microsoft.com/dotnet/core/samples:dotnetapp'
     }
 
   }
