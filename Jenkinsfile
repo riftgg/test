@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'bash:latest'
+      image 'mcr.microsoft.com/dotnet/core/samples:dotnetapp'
     }
 
   }
@@ -21,6 +21,12 @@ pipeline {
         stage('3rd') {
           steps {
             echo '3rd'
+          }
+        }
+        stage('dotnetapp') {
+          steps {
+            sh '''cd /app
+dotnet tests .'''
           }
         }
       }
